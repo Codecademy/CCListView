@@ -28,9 +28,6 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
 
 @interface CCListView ()
 
-// TODO: eventually support bottom to top and right to left?
-@property (readonly) BOOL horizontal;
-
 @property (strong, readwrite) NSMutableArray *contentViews;
 @property (strong, readwrite) NSMutableDictionary *contentViewsConstraints;
 

@@ -14,6 +14,9 @@
 
 - (void)sharedInit:(BOOL)horizontal scrolling:(BOOL)scrolling; // for subclassing, do not call directly unless you impliment your own init path
 
+// TODO: eventually support bottom to top and right to left?
+@property (readonly) BOOL horizontal;
+
 @property (readwrite) CGFloat contentViewSpacing;
 @property (readwrite) BOOL shouldConstrainTrailingEdge;
 

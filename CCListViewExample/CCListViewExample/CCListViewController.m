@@ -98,6 +98,10 @@
     
     self.listView.perpendicularScrollingEnabled = NO;
     self.listView.scrollingDirectionalLockEnabled = YES;
+    
+#if DEBUG
+    self.listView.debugShowFieldBounds = YES;
+#endif
 }
 
 + (UILabel *)createJunkLabel

@@ -79,16 +79,16 @@
         [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.listView
                                                                   attribute:NSLayoutAttributeLeft
                                                                   relatedBy:NSLayoutRelationEqual
-                                                                     toItem:self.leftLayoutGuide
-                                                                  attribute:NSLayoutAttributeRight
+                                                                     toItem:self.view
+                                                                  attribute:NSLayoutAttributeLeft
                                                                  multiplier:1.0
                                                                    constant:0.0] ];
         
         [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.listView
                                                                   attribute:NSLayoutAttributeRight
                                                                   relatedBy:NSLayoutRelationEqual
-                                                                     toItem:self.rightLayoutGuide
-                                                                  attribute:NSLayoutAttributeLeft
+                                                                     toItem:self.view
+                                                                  attribute:NSLayoutAttributeRight
                                                                  multiplier:1.0
                                                                    constant:0.0] ];
         

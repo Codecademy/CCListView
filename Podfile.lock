@@ -1,0 +1,18 @@
+PODS:
+  - CCListView (0.0.1):
+    - FLKAutoLayout
+  - FLKAutoLayout (0.1.1)
+
+DEPENDENCIES:
+  - CCListView (from `./`)
+  - FLKAutoLayout
+
+EXTERNAL SOURCES:
+  CCListView:
+    :path: ./
+
+SPEC CHECKSUMS:
+  CCListView: d9c05fe249d7afd9f0666d4a6d42ce401172bafe
+  FLKAutoLayout: 9fa39aac2903b274fbeed6be74154cdb937a04fc
+
+COCOAPODS: 0.33.1

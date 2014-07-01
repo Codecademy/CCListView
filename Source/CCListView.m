@@ -42,10 +42,6 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
 
 @synthesize horizontal = _horizontal;
 
-#if DEBUG
-@synthesize debugShowFieldBounds = _debugShowFieldBounds;
-#endif
-
 - (instancetype)initWithFrame:(CGRect)frame horizontal:(BOOL)horizontal scrolling:(BOOL)scrolling
 {
     self = [super initWithFrame:frame];
@@ -742,6 +738,7 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
 #pragma mark Debug
 
 #if DEBUG
+@synthesize debugShowFieldBounds = _debugShowFieldBounds;
 - (void)setDebugShowFieldBounds:(BOOL)debugShowFieldBounds
 {
     _debugShowFieldBounds = debugShowFieldBounds;

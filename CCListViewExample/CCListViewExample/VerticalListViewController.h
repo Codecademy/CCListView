@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class CCListView;
+#import "CCListViewController.h"
 
-@interface ViewController : UIViewController
-
-@property (weak, nonatomic) IBOutlet CCListView *listView;
+@interface VerticalListViewController : CCListViewController
 
 @end

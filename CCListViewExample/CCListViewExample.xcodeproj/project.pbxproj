@@ -34,6 +34,8 @@
 
 /* Begin PBXBuildFile section */
 		3C1772391961B88C0092F8A3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 3C1772381961B88C0092F8A3 /* Podfile */; };
+		3C54D71619633D7D00165E56 /* HorizontalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54D71519633D7D00165E56 /* HorizontalListViewController.m */; };
+		3C54D71919633DB600165E56 /* CCListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54D71819633DB600165E56 /* CCListViewController.m */; };
 		3C977790195E0D3C005C4700 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C97778F195E0D3C005C4700 /* Foundation.framework */; };
 		3C977792195E0D3C005C4700 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C977791195E0D3C005C4700 /* CoreGraphics.framework */; };
 		3C977794195E0D3C005C4700 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C977793195E0D3C005C4700 /* UIKit.framework */; };
@@ -41,7 +43,7 @@
 		3C97779C195E0D3C005C4700 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C97779B195E0D3C005C4700 /* main.m */; };
 		3C9777A0195E0D3C005C4700 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C97779F195E0D3C005C4700 /* AppDelegate.m */; };
 		3C9777A3195E0D3C005C4700 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C9777A1195E0D3C005C4700 /* Main.storyboard */; };
-		3C9777A9195E0D3C005C4700 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9777A8195E0D3C005C4700 /* ViewController.m */; };
+		3C9777A9195E0D3C005C4700 /* VerticalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9777A8195E0D3C005C4700 /* VerticalListViewController.m */; };
 		3C9777AB195E0D3C005C4700 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C9777AA195E0D3C005C4700 /* Images.xcassets */; };
 		3C9777B2195E0D3C005C4700 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9777B1195E0D3C005C4700 /* XCTest.framework */; };
 		3C9777B3195E0D3C005C4700 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C97778F195E0D3C005C4700 /* Foundation.framework */; };
@@ -78,6 +80,10 @@
 
 /* Begin PBXFileReference section */
 		3C1772381961B88C0092F8A3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3C54D71419633D7D00165E56 /* HorizontalListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalListViewController.h; sourceTree = "<group>"; };
+		3C54D71519633D7D00165E56 /* HorizontalListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalListViewController.m; sourceTree = "<group>"; };
+		3C54D71719633DB600165E56 /* CCListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCListViewController.h; sourceTree = "<group>"; };
+		3C54D71819633DB600165E56 /* CCListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCListViewController.m; sourceTree = "<group>"; };
 		3C97778C195E0D3C005C4700 /* CCListViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCListViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C97778F195E0D3C005C4700 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C977791195E0D3C005C4700 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -89,8 +95,8 @@
 		3C97779E195E0D3C005C4700 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3C97779F195E0D3C005C4700 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3C9777A2195E0D3C005C4700 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3C9777A7195E0D3C005C4700 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3C9777A8195E0D3C005C4700 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3C9777A7195E0D3C005C4700 /* VerticalListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalListViewController.h; sourceTree = "<group>"; };
+		3C9777A8195E0D3C005C4700 /* VerticalListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalListViewController.m; sourceTree = "<group>"; };
 		3C9777AA195E0D3C005C4700 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C9777B0195E0D3C005C4700 /* CCListViewExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCListViewExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9777B1195E0D3C005C4700 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -167,10 +173,14 @@
 				3C97779E195E0D3C005C4700 /* AppDelegate.h */,
 				3C97779F195E0D3C005C4700 /* AppDelegate.m */,
 				3C9777A1195E0D3C005C4700 /* Main.storyboard */,
-				3C9777A7195E0D3C005C4700 /* ViewController.h */,
-				3C9777A8195E0D3C005C4700 /* ViewController.m */,
+				3C9777A7195E0D3C005C4700 /* VerticalListViewController.h */,
+				3C9777A8195E0D3C005C4700 /* VerticalListViewController.m */,
 				3C9777AA195E0D3C005C4700 /* Images.xcassets */,
 				3C977796195E0D3C005C4700 /* Supporting Files */,
+				3C54D71419633D7D00165E56 /* HorizontalListViewController.h */,
+				3C54D71519633D7D00165E56 /* HorizontalListViewController.m */,
+				3C54D71719633DB600165E56 /* CCListViewController.h */,
+				3C54D71819633DB600165E56 /* CCListViewController.m */,
 			);
 			path = CCListViewExample;
 			sourceTree = "<group>";
@@ -353,8 +363,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C9777A9195E0D3C005C4700 /* ViewController.m in Sources */,
+				3C9777A9195E0D3C005C4700 /* VerticalListViewController.m in Sources */,
+				3C54D71919633DB600165E56 /* CCListViewController.m in Sources */,
 				3C9777A0195E0D3C005C4700 /* AppDelegate.m in Sources */,
+				3C54D71619633D7D00165E56 /* HorizontalListViewController.m in Sources */,
 				3C97779C195E0D3C005C4700 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

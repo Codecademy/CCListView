@@ -100,7 +100,7 @@
     self.listView.scrollingDirectionalLockEnabled = YES;
     
 #if DEBUG
-    self.listView.debugShowFieldBounds = YES;
+    self.listView.debugShowFieldBoundsEnabled = YES;
 #endif
 }
 

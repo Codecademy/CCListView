@@ -79,7 +79,7 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
     self.shouldConstrainTrailingEdge = NO;
     
 #if DEBUG
-    self.debugShowFieldBounds = NO;
+    self.debugShowFieldBoundsEnabled = NO;
 #endif
     self.contentViews = [NSMutableArray array];
     self.contentViewsConstraints = [NSMutableDictionary dictionary];
@@ -738,10 +738,10 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
 #pragma mark Debug
 
 #if DEBUG
-@synthesize debugShowFieldBounds = _debugShowFieldBounds;
-- (void)setDebugShowFieldBounds:(BOOL)debugShowFieldBounds
+@synthesize debugShowFieldBoundsEnabled = _debugShowFieldBoundsEnabled;
+- (void)setDebugShowFieldBoundsEnabled:(BOOL)debugShowFieldBoundsEnabled
 {
-    _debugShowFieldBounds = debugShowFieldBounds;
+    _debugShowFieldBoundsEnabled = debugShowFieldBoundsEnabled;
     for (id object in self.contentViews)
     {
         if ( [object isKindOfClass:[UIView class] ] )
@@ -753,16 +753,16 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
 
 - (void)setDebugShowFieldBoundsOnView:(UIView *)view
 {
-    if (self.debugShowFieldBounds)
+    if (self.isDebugShowFieldBoundsEnabled)
     {
         [view.layer setBorderColor:[UIColor redColor].CGColor ];
         [view.layer setBorderWidth:1.0f];
     }
 }
 
-- (BOOL)debugShowFieldBounds
+- (BOOL)isDebugShowFieldBoundsEnabled
 {
-    return _debugShowFieldBounds;
+    return _debugShowFieldBoundsEnabled;
 }
 
 #endif

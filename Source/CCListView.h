@@ -15,13 +15,13 @@
 - (void)sharedInit:(BOOL)horizontal scrolling:(BOOL)scrolling; // for subclassing, do not call directly unless you impliment your own init path
 
 // TODO: eventually support bottom to top and right to left?
-@property (readonly) BOOL horizontal;
+@property (readonly,getter = isHorizonal) BOOL horizontal;
 
 @property (readwrite) CGFloat contentViewSpacing;
 @property (readwrite) BOOL shouldConstrainTrailingEdge;
 
 #if DEBUG
-@property (readwrite) BOOL debugShowFieldBounds;
+@property (readwrite, getter = isDebugShowFieldBoundsEnabled) BOOL debugShowFieldBoundsEnabled;
 #endif
 
 - (void)addContentView:(UIView *)contentView;
@@ -59,8 +59,8 @@
 
 + (CCListView *)parentListView:(UIView *)forView;
 
-@property (readwrite,getter=isPerpendicularScrollingEnabled) BOOL perpendicularScrollingEnabled;
+@property (readwrite, getter = isPerpendicularScrollingEnabled) BOOL perpendicularScrollingEnabled;
 
-@property (readwrite,getter=isScrollingDirectionalLockEnabled) BOOL scrollingDirectionalLockEnabled;
+@property (readwrite, getter = isScrollingDirectionalLockEnabled) BOOL scrollingDirectionalLockEnabled;
 
 @end

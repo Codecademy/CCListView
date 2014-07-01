@@ -737,6 +737,26 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
     }
 }
 
+- (void)setScrollingDirectionalLockEnabled:(BOOL)directionalLockEnabled
+{
+    if ( [self.containerView isKindOfClass:[UIScrollView class] ] )
+    {
+        UIScrollView *scrollView = (UIScrollView *)self.containerView;
+        scrollView.directionalLockEnabled = directionalLockEnabled;
+    }
+}
+
+- (BOOL)isScrollingDirectionalLockEnabled
+{
+    BOOL result = NO;
+    if ( [self.containerView isKindOfClass:[UIScrollView class] ] )
+    {
+        UIScrollView *scrollView = (UIScrollView *)self.containerView;
+        result = scrollView.directionalLockEnabled;
+    }
+    return result;
+}
+
 #pragma mark Debug
 
 #if DEBUG

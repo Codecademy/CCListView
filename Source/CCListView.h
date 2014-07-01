@@ -58,4 +58,6 @@
 
 @property (readwrite,getter=isPerpendicularScrollingEnabled) BOOL perpendicularScrollingEnabled;
 
+@property (readwrite,getter=isScrollingDirectionalLockEnabled) BOOL scrollingDirectionalLockEnabled;
+
 @end

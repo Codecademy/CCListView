@@ -126,7 +126,7 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
                 
                 CGFloat forceHeight = contentScrollView.frame.size.height - contentScrollView.contentInset.top - contentScrollView.contentInset.bottom;
                 
-                [contentScrollView forceHeight:forceHeight];
+                [contentScrollView forceHeight:forceHeight]; // necessary for containing scrolling content that we don't want autosizing up
                 
             } else
             {
@@ -134,7 +134,7 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
                 
                 CGFloat forceWidth = contentScrollView.frame.size.width - contentScrollView.contentInset.left - contentScrollView.contentInset.right;
                 
-                [contentScrollView forceWidth:forceWidth];
+                [contentScrollView forceWidth:forceWidth]; // necessary for containing scrolling content that we don't want autosizing up
             }
         }
     }

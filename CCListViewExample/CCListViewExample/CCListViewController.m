@@ -38,16 +38,14 @@
 {
 }
 
-+ (BOOL)verticalContent
++ (BOOL)horizontalContent
 {
-    return YES;
+    return NO;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor grayColor];
     
     [self ensureListView];
 }
@@ -56,14 +54,7 @@
 {
     if (!self.listView)
     {
-        CCListView *listView;
-        if ( [ [self class] verticalContent] )
-        {
-            listView = [ [CCListView alloc] initWithFrameVertically:self.view.bounds scrolling:YES];
-        } else
-        {
-            listView = [ [CCListView alloc] initWithFrameHorizontally:self.view.bounds scrolling:YES];
-        }
+        CCListView *listView = [ [CCListView alloc] initWithFrame:self.view.bounds horizontal:[ [self class] horizontalContent] scrolling:YES];
         self.listView = listView;
         
         [self.view addSubview:self.listView];
@@ -100,6 +91,9 @@
                                                                   attribute:NSLayoutAttributeLeft
                                                                  multiplier:1.0
                                                                    constant:0.0] ];
+        
+        
+        self.listView.backgroundColor = [UIColor grayColor];
     }
     
     self.listView.perpendicularScrollingEnabled = NO;
@@ -120,9 +114,10 @@
     UITextView *junk = [ [UITextView alloc] init];
     [junk setText:@"This is a disertation on junk, junk junk junk junk junk junk junk junk junk junk junk junk junk junk junk junk junkjunk junk junk junk junk junk junk junk junk junk junk junk junk junk junk junk junkjunk junk junk junk junk junk junk junk junk junk junk junk junk junk junk junk junkjunk junk junk junk junk junk junk junk junk junk junk junk junk junk junk junk junk."];
     [junk setBackgroundColor:[UIColor colorWithRed:0.689 green:0.677 blue:0.999 alpha:1.000] ];
-    [junk setFrame:CGRectMake(0, 0, 100, 100) ];
-    [junk constrainWidth:@"200"];
-    [junk constrainHeight:@"100"];
+    
+    [junk setFrame:CGRectMake(0, 0, 100, 200) ];
+    [junk constrainWidth:[NSString stringWithFormat:@"%f", junk.frame.size.width] ];
+    [junk constrainHeight:[NSString stringWithFormat:@"%f", junk.frame.size.height] ];
     return junk;
 }
 

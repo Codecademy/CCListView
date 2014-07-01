@@ -49,22 +49,12 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
 @synthesize debugShowFieldBounds = _debugShowFieldBounds;
 #endif
 
-- (instancetype)initWithFrameVertically:(CGRect)frame scrolling:(BOOL)scrolling
+- (instancetype)initWithFrame:(CGRect)frame horizontal:(BOOL)horizontal scrolling:(BOOL)scrolling
 {
     self = [super initWithFrame:frame];
     if (self)
     {
-        [self sharedInit:NO scrolling:scrolling];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrameHorizontally:(CGRect)frame scrolling:(BOOL)scrolling
-{
-    self = [super initWithFrame:frame];
-    if (self)
-    {
-        [self sharedInit:YES scrolling:scrolling];
+        [self sharedInit:horizontal scrolling:scrolling];
     }
     return self;
 }

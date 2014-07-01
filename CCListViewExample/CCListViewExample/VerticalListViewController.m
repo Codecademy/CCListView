@@ -10,9 +10,9 @@
 
 @implementation VerticalListViewController
 
-+ (BOOL)verticalContent
++ (BOOL)horizontalContent
 {
-    return YES;
+    return NO;
 }
 
 - (void)viewDidLoad

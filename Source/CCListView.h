@@ -10,8 +10,7 @@
 
 @interface CCListView : UIView<UIScrollViewDelegate>
 
-- (instancetype)initWithFrameVertically:(CGRect)frame scrolling:(BOOL)scrolling;
-- (instancetype)initWithFrameHorizontally:(CGRect)frame scrolling:(BOOL)scrolling;
+- (instancetype)initWithFrame:(CGRect)frame horizontal:(BOOL)horizontal scrolling:(BOOL)scrolling;
 
 - (void)sharedInit:(BOOL)horizontal scrolling:(BOOL)scrolling; // for subclassing, do not call directly unless you impliment your own init path
 

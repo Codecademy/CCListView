@@ -12,7 +12,7 @@
 
 @interface CCListViewController : UIViewController
 
-+ (BOOL)verticalContent;
++ (BOOL)horizontalContent;
 - (void)sharedInit;
 
 @property (weak, nonatomic) IBOutlet CCListView *listView;

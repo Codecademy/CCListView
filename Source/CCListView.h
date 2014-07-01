@@ -55,6 +55,7 @@
 - (void)removeAllContentViews;
 
 @property (weak, readwrite) UIView *containerView;
+@property (weak, readonly) UIScrollView *scrollContainerView; // if our container view is a UIScrollView the result will point to our container view, otherwise it will be NULL
 
 + (CCListView *)parentListView:(UIView *)forView;
 

@@ -115,9 +115,9 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
         [self.containerView alignLeading:@"0" trailing:@"0" toView:self];
         [self.containerView alignTop:@"0" bottom:@"0" toView:self];
         
-        if (scrolling && [self.containerView isKindOfClass:[UIScrollView class] ] )
+        if (scrolling && self.scrollContainerView)
         {
-            UIScrollView *contentScrollView = (UIScrollView *)self.containerView;
+            UIScrollView *contentScrollView = self.scrollContainerView;
             contentScrollView.delegate = self;
             
             if (self.horizontal)
@@ -142,7 +142,7 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
     self.contentViewSpacing = 5.0f;
 }
 
-- (UIScrollView *)contentViewAsScrollView
+- (UIScrollView *)scrollContainerView
 {
     UIScrollView *result;
     
@@ -491,9 +491,9 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
         result.y = viewOrigin.y - self.contentViewSpacing / 2.0f;
     }
     
-    if ( [self contentViewAsScrollView] )
+    if (self.scrollContainerView)
     {
-        CGPoint offset = [self contentViewAsScrollView].contentOffset;
+        CGPoint offset = self.scrollContainerView.contentOffset;
         
         result.x -= offset.x;
         result.y -= offset.y;
@@ -505,10 +505,9 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
 - (CGSize)contentSize
 {
     CGSize result;
-    if ( [self.containerView isKindOfClass:[UIScrollView class] ] )
+    if (self.scrollContainerView)
     {
-        UIScrollView *scrollView = (UIScrollView *)self.containerView;
-        result = scrollView.contentSize;
+        result = self.scrollContainerView.contentSize;
     } else
     {
         result = self.containerView.frame.size;
@@ -691,16 +690,14 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
 - (void)setPerpendicularScrollingEnabled:(BOOL)perpendicularScrollingEnabled
 {
     _perpendicularScrollingEnabled = perpendicularScrollingEnabled;
-    if (!_perpendicularScrollingEnabled && [self.containerView isKindOfClass:[UIScrollView class] ] )
+    if (!_perpendicularScrollingEnabled && self.scrollContainerView)
     {
-        UIScrollView *scrollView = (UIScrollView *)self.containerView;
-        
         if (self.horizontal)
         {
-            self.disabledPerpendicularScrollingLastPositionComponent = scrollView.contentOffset.y;
+            self.disabledPerpendicularScrollingLastPositionComponent = self.scrollContainerView.contentOffset.y;
         } else
         {
-            self.disabledPerpendicularScrollingLastPositionComponent = scrollView.contentOffset.x;
+            self.disabledPerpendicularScrollingLastPositionComponent = self.scrollContainerView.contentOffset.x;
         }
     }
 }
@@ -726,20 +723,18 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
 
 - (void)setScrollingDirectionalLockEnabled:(BOOL)directionalLockEnabled
 {
-    if ( [self.containerView isKindOfClass:[UIScrollView class] ] )
+    if (self.scrollContainerView)
     {
-        UIScrollView *scrollView = (UIScrollView *)self.containerView;
-        scrollView.directionalLockEnabled = directionalLockEnabled;
+        self.scrollContainerView.directionalLockEnabled = directionalLockEnabled;
     }
 }
 
 - (BOOL)isScrollingDirectionalLockEnabled
 {
     BOOL result = NO;
-    if ( [self.containerView isKindOfClass:[UIScrollView class] ] )
+    if (self.scrollContainerView)
     {
-        UIScrollView *scrollView = (UIScrollView *)self.containerView;
-        result = scrollView.directionalLockEnabled;
+        result = self.scrollContainerView.directionalLockEnabled;
     }
     return result;
 }

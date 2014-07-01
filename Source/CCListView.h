@@ -20,9 +20,9 @@
 @property (readwrite) CGFloat contentViewSpacing;
 @property (readwrite) BOOL shouldConstrainTrailingEdge;
 
-#if DEBUG
-@property (readwrite, getter = isDebugShowFieldBoundsEnabled) BOOL debugShowFieldBoundsEnabled;
-#endif
+@property (readwrite, getter = isPerpendicularScrollingEnabled) BOOL perpendicularScrollingEnabled;
+
+@property (readwrite, getter = isScrollingDirectionalLockEnabled) BOOL scrollingDirectionalLockEnabled;
 
 - (void)addContentView:(UIView *)contentView;
 - (void)insertContentView:(UIView *)contentView atIndex:(NSUInteger)index;
@@ -59,8 +59,8 @@
 
 + (CCListView *)parentListView:(UIView *)forView;
 
-@property (readwrite, getter = isPerpendicularScrollingEnabled) BOOL perpendicularScrollingEnabled;
-
-@property (readwrite, getter = isScrollingDirectionalLockEnabled) BOOL scrollingDirectionalLockEnabled;
+#if DEBUG
+@property (readwrite, getter = isDebugShowFieldBoundsEnabled) BOOL debugShowFieldBoundsEnabled;
+#endif
 
 @end

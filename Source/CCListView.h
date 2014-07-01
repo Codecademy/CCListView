@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CCListView : UIView
+@interface CCListView : UIView<UIScrollViewDelegate>
 
 - (instancetype)initWithFrameVertically:(CGRect)frame scrolling:(BOOL)scrolling;
 - (instancetype)initWithFrameHorizontally:(CGRect)frame scrolling:(BOOL)scrolling;
@@ -55,5 +55,7 @@
 @property (weak, readwrite) UIView *containerView;
 
 + (CCListView *)parentListView:(UIView *)forView;
+
+@property (readwrite,getter=isPerpendicularScrollingEnabled) BOOL perpendicularScrollingEnabled;
 
 @end

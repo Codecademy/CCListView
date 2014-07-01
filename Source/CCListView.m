@@ -37,6 +37,8 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
 // the last content view's contraints to the bottom, these are the ones that change the most with each newly added content view
 @property (strong, readwrite) NSArray *lastContentViewContraints; // TODO: wrap into contentViewsConstraints dict
 
+@property (readwrite) CGFloat disabledPerpendicularScrollingLastPositionComponent;
+
 @end
 
 @implementation CCListView
@@ -129,6 +131,8 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
         if (scrolling && [self.containerView isKindOfClass:[UIScrollView class] ] )
         {
             UIScrollView *contentScrollView = (UIScrollView *)self.containerView;
+            contentScrollView.delegate = self;
+            
             if (self.horizontal)
             {
                 contentScrollView.contentInset = UIEdgeInsetsMake(10.0f, 0, 10.0f, 0);
@@ -694,6 +698,43 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
     }
     
     return result;
+}
+
+@synthesize perpendicularScrollingEnabled = _perpendicularScrollingEnabled;
+- (void)setPerpendicularScrollingEnabled:(BOOL)perpendicularScrollingEnabled
+{
+    _perpendicularScrollingEnabled = perpendicularScrollingEnabled;
+    if (!_perpendicularScrollingEnabled && [self.containerView isKindOfClass:[UIScrollView class] ] )
+    {
+        UIScrollView *scrollView = (UIScrollView *)self.containerView;
+        
+        if (self.horizontal)
+        {
+            self.disabledPerpendicularScrollingLastPositionComponent = scrollView.contentOffset.y;
+        } else
+        {
+            self.disabledPerpendicularScrollingLastPositionComponent = scrollView.contentOffset.x;
+        }
+    }
+}
+
+- (BOOL)isPerpendicularScrollingEnabled
+{
+    return _perpendicularScrollingEnabled;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (!self.perpendicularScrollingEnabled)
+    {
+        if (self.horizontal)
+        {
+            [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, self.disabledPerpendicularScrollingLastPositionComponent) ];
+        } else
+        {
+            [scrollView setContentOffset:CGPointMake(self.disabledPerpendicularScrollingLastPositionComponent, scrollView.contentOffset.y)];
+        }
+    }
 }
 
 #pragma mark Debug

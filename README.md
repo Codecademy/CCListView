@@ -7,6 +7,8 @@ CCListView
 
 You can build **CCListViews** that contain **CCListViews** (that contain **CCListViews**...) and they even support scrolling views within scrolling views.
 
+![screenshot1](https://github.com/Codecademy/CCListView/blob/master/Screenshots/screenshot1.png?raw=true)
+
 Installation
 ---
 **CCListView** is available through **[cocoapods](http://cocoapods.org)**, to install simple add the following line to your `PodFile`:

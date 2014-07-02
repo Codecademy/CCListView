@@ -14,7 +14,7 @@ You can build **CCListViews** that contain **CCListViews** (that contain **CCLis
                    DESC
 
   s.homepage     = "http://github.com/Codecademy/CCListView.git"
-  s.screenshots  = "https://raw.githubusercontent.com/Codecademy/CCListView/master/Screenshots/screenshot1.png"
+  s.screenshots  = "https://github.com/Codecademy/CCListView/blob/master/Screenshots/screenshot1.png?raw=true"
   s.license      = "MIT"
   s.authors      =  { 'Ian Grossberg / Codecademy' => 'yo.ian.g@gmail.com' }
   s.platform     = :ios, "6.0"

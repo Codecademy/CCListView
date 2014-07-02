@@ -19,7 +19,7 @@ You can build **CCListViews** that contain **CCListViews** (that contain **CCLis
   s.authors      =  { 'Ian Grossberg / Codecademy' => 'yo.ian.g@gmail.com' }
   s.platform     = :ios, "6.0"
 
-  s.source       = { :git => "http://github.com/Codecademy/CCListView.git", :tag => "0.1.0" }
+  s.source       = { :git => "https://github.com/Codecademy/CCListView.git", :tag => "0.1.0" }
   s.source_files  = "Source", "Source/**/*.{h,m}"
   s.public_header_files = "Source/CCListView.h"
   s.requires_arc = true

@@ -15,18 +15,4 @@
     return NO;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    [self.listView addContentView:[CCListViewController createJunkLabel] ];
-    [self.listView addContentView:[CCListViewController createJunkTextView] ];
-    [self.listView addContentView:[CCListViewController createJunkLabel] ];
-    [self.listView addContentView:[CCListViewController createJunkTextView] ];
-    [self.listView addContentView:[CCListViewController createJunkLabel] ];
-    [self.listView addContentView:[CCListViewController createJunkTextView] ];
-    [self.listView addContentView:[CCListViewController createJunkLabel] ];
-    [self.listView addContentView:[CCListViewController createJunkTextView] ];
-}
-
 @end

@@ -33,7 +33,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		3C1772391961B88C0092F8A3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 3C1772381961B88C0092F8A3 /* Podfile */; };
 		3C54D71619633D7D00165E56 /* HorizontalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54D71519633D7D00165E56 /* HorizontalListViewController.m */; };
 		3C54D71919633DB600165E56 /* CCListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54D71819633DB600165E56 /* CCListViewController.m */; };
 		3C977790195E0D3C005C4700 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C97778F195E0D3C005C4700 /* Foundation.framework */; };
@@ -51,6 +50,7 @@
 		3C9777BC195E0D3C005C4700 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C9777BA195E0D3C005C4700 /* InfoPlist.strings */; };
 		3C9777BE195E0D3C005C4700 /* CCListViewExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9777BD195E0D3C005C4700 /* CCListViewExampleTests.m */; };
 		3C9777C9195E0D62005C4700 /* CCListView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3C9777C8195E0D62005C4700 /* CCListView.podspec */; };
+		3C9B04871964867300FAD524 /* doge.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9B04861964867300FAD524 /* doge.png */; };
 		52136C31A8ED401BB1F6EB3A /* libPods-CCListViewExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A247147D88DC45FD8AD25556 /* libPods-CCListViewExample.a */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +79,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C1772381961B88C0092F8A3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3C54D71419633D7D00165E56 /* HorizontalListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalListViewController.h; sourceTree = "<group>"; };
 		3C54D71519633D7D00165E56 /* HorizontalListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalListViewController.m; sourceTree = "<group>"; };
 		3C54D71719633DB600165E56 /* CCListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCListViewController.h; sourceTree = "<group>"; };
@@ -104,6 +103,10 @@
 		3C9777BB195E0D3C005C4700 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C9777BD195E0D3C005C4700 /* CCListViewExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCListViewExampleTests.m; sourceTree = "<group>"; };
 		3C9777C8195E0D62005C4700 /* CCListView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CCListView.podspec; path = ../CCListView.podspec; sourceTree = "<group>"; };
+		3C9B04821964828A00FAD524 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
+		3C9B04831964828A00FAD524 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		3C9B04861964867300FAD524 /* doge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doge.png; sourceTree = "<group>"; };
+		3C9B04891964886D00FAD524 /* screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot1.png; sourceTree = "<group>"; };
 		58423AAC5FF24F838A28BEB3 /* Pods-CCListViewExample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCListViewExample.xcconfig"; path = "../Pods/Pods-CCListViewExample.xcconfig"; sourceTree = "<group>"; };
 		A247147D88DC45FD8AD25556 /* libPods-CCListViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCListViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,7 +139,9 @@
 		3C977783195E0D3C005C4700 = {
 			isa = PBXGroup;
 			children = (
-				3C1772381961B88C0092F8A3 /* Podfile */,
+				3C9B04821964828A00FAD524 /* LICENSE.md */,
+				3C9B04831964828A00FAD524 /* README.md */,
+				3C9B04881964886D00FAD524 /* Screenshots */,
 				3C9777C8195E0D62005C4700 /* CCListView.podspec */,
 				3C977795195E0D3C005C4700 /* CCListViewExample */,
 				3C9777B7195E0D3C005C4700 /* CCListViewExampleTests */,
@@ -170,6 +175,7 @@
 		3C977795195E0D3C005C4700 /* CCListViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				3C9B04861964867300FAD524 /* doge.png */,
 				3C97779E195E0D3C005C4700 /* AppDelegate.h */,
 				3C97779F195E0D3C005C4700 /* AppDelegate.m */,
 				3C9777A1195E0D3C005C4700 /* Main.storyboard */,
@@ -212,6 +218,15 @@
 				3C9777BA195E0D3C005C4700 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3C9B04881964886D00FAD524 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				3C9B04891964886D00FAD524 /* screenshot1.png */,
+			);
+			name = Screenshots;
+			path = ../Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +309,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C1772391961B88C0092F8A3 /* Podfile in Resources */,
 				3C9777C9195E0D62005C4700 /* CCListView.podspec in Resources */,
+				3C9B04871964867300FAD524 /* doge.png in Resources */,
 				3C9777AB195E0D3C005C4700 /* Images.xcassets in Resources */,
 				3C9777A3195E0D3C005C4700 /* Main.storyboard in Resources */,
 				3C97779A195E0D3C005C4700 /* InfoPlist.strings in Resources */,

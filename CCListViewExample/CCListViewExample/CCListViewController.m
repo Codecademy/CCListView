@@ -48,6 +48,19 @@
     [super viewDidLoad];
     
     [self ensureListView];
+    
+    [self.listView addContentView:[CCListViewController createJunkLabel] ];
+    [self.listView addContentView:[CCListViewController createJunkTextView] ];
+    [self.listView addContentView:[CCListViewController createImageView] ];
+    [self.listView addContentView:[CCListViewController createJunkLabel] ];
+    [self.listView addContentView:[CCListViewController createJunkTextView] ];
+    [self.listView addContentView:[CCListViewController createImageView] ];
+    [self.listView addContentView:[CCListViewController createJunkLabel] ];
+    [self.listView addContentView:[CCListViewController createJunkTextView] ];
+    [self.listView addContentView:[CCListViewController createImageView] ];
+    [self.listView addContentView:[CCListViewController createJunkLabel] ];
+    [self.listView addContentView:[CCListViewController createJunkTextView] ];
+    [self.listView addContentView:[CCListViewController createImageView] ];
 }
 
 - (void)ensureListView
@@ -120,6 +133,15 @@
     [junk setBackgroundColor:[UIColor colorWithRed:0.689 green:0.677 blue:0.999 alpha:1.000] ];
     
     [junk setFrame:CGRectMake(0, 0, 100, 200) ];
+    [junk constrainWidth:[NSString stringWithFormat:@"%f", junk.frame.size.width] ];
+    [junk constrainHeight:[NSString stringWithFormat:@"%f", junk.frame.size.height] ];
+    return junk;
+}
+
++ (UIImageView *)createImageView
+{
+    UIImageView *junk = [ [UIImageView alloc] initWithImage:[UIImage imageNamed:@"doge"] ];
+    [junk setFrame:CGRectMake(0, 0, 226, 170) ];
     [junk constrainWidth:[NSString stringWithFormat:@"%f", junk.frame.size.width] ];
     [junk constrainHeight:[NSString stringWithFormat:@"%f", junk.frame.size.height] ];
     return junk;

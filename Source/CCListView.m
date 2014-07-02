@@ -638,7 +638,7 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
     return result;
 }
 
-- (void)removeContentView:(UIView *)contentView butKeepAsSubview:(BOOL)keepAsSubview
+- (void)removeContentView:(UIView *)contentView
 {
     if ( [self.contentViews containsObject:contentView] )
     {
@@ -656,10 +656,7 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
             [self constrainView:nextView toPrevious:previousView];
         }
         
-        if (!keepAsSubview)
-        {
-            [contentView removeFromSuperview];
-        }
+        [contentView removeFromSuperview];
         
         if (self.removedContentViewHandler)
         {
@@ -671,11 +668,6 @@ const NSString *CodingContentViewNextConstraintsKey = @"CodingContentViewNextCon
     {
         NSLogWarn(@"Attempting to remove a content view (%@) not current in the list", contentView);
     }
-}
-
-- (void)removeContentView:(UIView *)contentView
-{
-    [self removeContentView:contentView butKeepAsSubview:NO];
 }
 
 - (void)removeContentViewAtIndex:(NSUInteger)index

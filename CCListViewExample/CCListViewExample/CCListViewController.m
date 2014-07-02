@@ -107,7 +107,7 @@
 + (UILabel *)createJunkLabel
 {
     UILabel *junk = [ [UILabel alloc] init];
-    [junk setText:@"JUNK IN THA TRUNK"];
+    [junk setText:@"Heyoooooooooooooooooooo"];
     [junk sizeToFit];
     [junk setBackgroundColor:[UIColor colorWithRed:0.993 green:0.702 blue:1.000 alpha:1.000] ];
     return junk;

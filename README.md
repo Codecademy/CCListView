@@ -1,8 +1,9 @@
+CCListView
+===
+
 [![Pod Version](http://img.shields.io/cocoapods/v/CCListView.svg?style=flat)](http://cocoadocs.org/docsets/CCListView/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/CCListView.svg?style=flat)](http://cocoadocs.org/docsets/CCListView/)
 
-CCListView
-===
 **CCListView** is a highly customizable sequential view container. It can be configured to:
 
 * optionally scroll contained content

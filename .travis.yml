@@ -4,25 +4,23 @@ env:
   - APP_NAME="CCListViewExample"
   - 'DEVELOPER_NAME="iPhone Distribution: Ryzac Inc."'
   - PROFILE_NAME="CCListViewExample_Enterprise"
-  - secure: eWwkX8GcwjA95yMrQPrhsIvn8dvOMvfigdddbpLFdLKsX2fznJ/XEUjpMIiDtHnQhYOf23zNVaxSbuiDOf2rW2g/edwFymxq6gD5FGhmpgAOAb8gfPW1xPvkXyLOzduHuNuTXKt09c7DCZG+glAZCodG6wkGub36N0WKezmciU0=
-
+  - secure: eomjOG8kzla/lknFIr56Uv1ZZmVEVkG5PF8yx3eE2xxgK6FaJKKxWe2KisVm1NFoLCn4ifuOS50+BzZjLOcL15mrya5vXQPnFJD258OUWrx/j/4gTJYVoq9GtECQJf2+Te5wVLsQ+xYutgQx8bGEm74tVFw4YC/mbk3UOfV7sMU=
+  - secure: M9Id514szCTeQM2SYV+FfrfGjW7rGYKJDqYZxouhxx1yHuiRoneepGj6K613VtmLg+lYD5nH91a9g0GCGBvUdjpxnKjvOKkuAEGZulpZ2Xq9fkP5cFmlW8AnhXTFQfCXklEqqNbMdigh5X1ImcYX5+4phBmMRKK/BwRB95fDuKo=
 before_script:
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in Tools/Signing/AppleWWDRCA.cer.enc -d -a -out Tools/Signing/AppleWWDRCA.cer
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in Tools/Signing/CCListViewExample_Enterprise.mobileprovision.enc -d -a -out Tools/Signing/CCListViewExample_Enterprise.mobileprovision
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in "Tools/Signing/Distribution Certificate.cer.enc" -d -a -out "Tools/Signing/Distribution Certificate.cer"
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in "Tools/Signing/Distribution Certificate.p12.enc" -d -a -out "Tools/Signing/Distribution Certificate.p12"
-- ./Tools/Signing/createKeyChain.sh
-
+- "./Tools/Signing/createKeyChain.sh"
 xcode_project: CCListViewExample.xcworkspace
 xcode_scheme: CCListViewExample
 before_install: gem install cocoapods
 xcode_sdk: iphonesimulator
 script:
-- xctool -workspace CCListViewExample.xcworkspace -scheme "CCListViewExample" -sdk iphonesimulator 
+- xctool -workspace CCListViewExample.xcworkspace -scheme "CCListViewExample" -sdk iphonesimulator
 - xctool -workspace CCListViewExample.xcworkspace -scheme "CCListViewExample" -sdk iphoneos -configuration Release build OBJROOT=$PWD/build SYMROOT=$PWD/build
 - pod spec lint CCListView.podspec
-
 after_success:
-- ./Tools/TravisCI/sign.sh
+- "./Tools/TravisCI/sign.sh"
 after_script:
-- ./Tools/TravisCI/finished.sh
+- "./Tools/TravisCI/finished.sh"

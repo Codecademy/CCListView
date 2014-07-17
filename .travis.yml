@@ -1,8 +1,28 @@
 language: objective-c
+env:
+  global:
+  - APP_NAME="CCListViewExample"
+  - 'DEVELOPER_NAME="iPhone Distribution: Ryzac Inc."'
+  - PROFILE_NAME="CCListViewExample_Enterprise"
+  - secure: eWwkX8GcwjA95yMrQPrhsIvn8dvOMvfigdddbpLFdLKsX2fznJ/XEUjpMIiDtHnQhYOf23zNVaxSbuiDOf2rW2g/edwFymxq6gD5FGhmpgAOAb8gfPW1xPvkXyLOzduHuNuTXKt09c7DCZG+glAZCodG6wkGub36N0WKezmciU0=
+
+before_script:
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in Tools/Signing/AppleWWDRCA.cer.enc -d -a -out Tools/Signing/AppleWWDRCA.cer
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in Tools/Signing/CCListViewExample_Enterprise.mobileprovision.enc -d -a -out Tools/Signing/CCListViewExample_Enterprise.mobileprovision
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in "Tools/Signing/Distribution Certificate.cer.enc" -d -a -out "Tools/Signing/Distribution Certificate.cer"
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in "Tools/Signing/Distribution Certificate.p12.enc" -d -a -out "Tools/Signing/Distribution Certificate.p12"
+- ./Tools/Signing/createKeyChain.sh
+
 xcode_project: CCListViewExample.xcworkspace
 xcode_scheme: CCListViewExample
 before_install: gem install cocoapods
 xcode_sdk: iphonesimulator
-script: 
- - xctool -workspace CCListViewExample.xcworkspace -scheme "CCListViewExample" -sdk iphonesimulator build
- - pod spec lint CCListView.podspec
+script:
+- xctool -workspace CCListViewExample.xcworkspace -scheme "CCListViewExample" -sdk iphonesimulator 
+- xctool -workspace CCListViewExample.xcworkspace -scheme "CCListViewExample" -sdk iphoneos -configuration Release build OBJROOT=$PWD/build SYMROOT=$PWD/build
+- pod spec lint CCListView.podspec
+
+after_success:
+- ./Tools/TravisCI/sign.sh
+after_script:
+- ./Tools/TravisCI/finished.sh

@@ -3,3 +3,8 @@
 /Pods/
 
 xcuserdata
+
+/Tools/Signing/AppleWWDRCA.cer
+/Tools/Signing/CCListViewExample_Enterprise.mobileprovision
+/Tools/Signing/Distribution Certificate.cer
+/Tools/Signing/Distribution Certificate.p12

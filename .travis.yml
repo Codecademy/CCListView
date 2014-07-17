@@ -4,8 +4,8 @@ env:
   - APP_NAME="CCListViewExample"
   - 'DEVELOPER_NAME="iPhone Distribution: Ryzac Inc."'
   - PROFILE_NAME="CCListViewExample_Enterprise"
-  - secure: eomjOG8kzla/lknFIr56Uv1ZZmVEVkG5PF8yx3eE2xxgK6FaJKKxWe2KisVm1NFoLCn4ifuOS50+BzZjLOcL15mrya5vXQPnFJD258OUWrx/j/4gTJYVoq9GtECQJf2+Te5wVLsQ+xYutgQx8bGEm74tVFw4YC/mbk3UOfV7sMU=
-  - secure: M9Id514szCTeQM2SYV+FfrfGjW7rGYKJDqYZxouhxx1yHuiRoneepGj6K613VtmLg+lYD5nH91a9g0GCGBvUdjpxnKjvOKkuAEGZulpZ2Xq9fkP5cFmlW8AnhXTFQfCXklEqqNbMdigh5X1ImcYX5+4phBmMRKK/BwRB95fDuKo=
+  - secure: IUWvVMx2Hv53tI2vCx3aYXtBqUZ/xt1j9yLPK5zmYUd8AILTsBrfT8oB9jrU7aDGb2049Dth/sCwBvIIBcbnOC2HCG4580+YKYpjV9fJAOdJJ5X1pZopIpn4sR6YnNID8xDLvkYN7odKxB8KTsrm5hm0v4XBmOFsdQLveWjwGGI=
+  - secure: Q50hMN9J/aaYYh0b4n8tKYd6u1qBGpgDEKsqdNZIMTBAjD7yADQvahAZlORPNekzOPS905a3hwb+b+rhCXvCzyn+VJgEAJbEw8e7av2Ei5xz/RjNpLa9liIPUfpIin56RSxSZoV9UF72J+iowG12O5j5BvqcFsE7gxPdT6kF6pY=
 before_script:
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in Tools/Signing/AppleWWDRCA.cer.enc -d -a -out Tools/Signing/AppleWWDRCA.cer
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in Tools/Signing/CCListViewExample_Enterprise.mobileprovision.enc -d -a -out Tools/Signing/CCListViewExample_Enterprise.mobileprovision

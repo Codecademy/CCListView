@@ -5,4 +5,4 @@ security import ./Tools/Signing/Distribution\ Certificate.cer -k ~/Library/Keych
 security import ./Tools/Signing/Distribution\ Certificate.p12 -k ~/Library/Keychains/ios-build.keychain -P $KEY_PASSWORD -T /usr/bin/codesign
 security default-keychain -s ios-build.keychain
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-cp "./$PROFILE_NAME.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/
+cp "./Tools/Signing/$PROFILE_NAME.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/

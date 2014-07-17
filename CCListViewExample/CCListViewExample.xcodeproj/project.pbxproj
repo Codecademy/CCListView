@@ -354,7 +354,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd ..\npod spec lint CCListView.podspec";
+			shellScript = "cd ${SRCROOT}/..\npod spec lint CCListView.podspec";
 		};
 		9BE2D323B84B499F88521ECC /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

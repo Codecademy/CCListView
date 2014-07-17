@@ -354,7 +354,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -z \"${TRAVIS}\" ]; then\n    cd ${SRCROOT}/..\nelse\n    cd ${TRAVIS_BUILD_DIR}\n    gem install cocoapods\n    pwd\nfi\n\npod spec lint CCListView.podspec";
+			shellScript = "if [ -z \"${TRAVIS}\" ]; then\n    cd ${SRCROOT}/..\nelse\n    cd ${TRAVIS_BUILD_DIR}\nfi\n\npod spec lint CCListView.podspec";
 		};
 		9BE2D323B84B499F88521ECC /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -4,5 +4,5 @@ xcode_scheme: CCListViewExample
 before_install: gem install cocoapods
 xcode_sdk: iphonesimulator
 script: 
-	- xctool -workspace CCListViewExample.xcworkspace -scheme "CCListViewExample" -sdk iphonesimulator build
-	- pod spec lint CCListView.podspec
+ - xctool -workspace CCListViewExample.xcworkspace -scheme "CCListViewExample" -sdk iphonesimulator build
+ - pod spec lint CCListView.podspec

@@ -2,4 +2,4 @@ language: objective-c
 xcode_project: CCListViewExample.xcworkspace
 xcode_scheme: CCListViewExample
 xcode_sdk: iphonesimulator
-script: xctool -project CCListViewExample.xcworkspace -scheme "All Tests" -sdk iphonesimulator build
+script: xctool -workspace CCListViewExample.xcworkspace -scheme "All Tests" -sdk iphonesimulator build

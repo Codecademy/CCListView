@@ -14,7 +14,9 @@ OUTPUTDIR="$PWD/build/Release-iphoneos"
 xcrun -log -sdk iphoneos PackageApplication "$OUTPUTDIR/$APP_NAME.app" -o "$OUTPUTDIR/$APP_NAME.ipa" -sign "$DEVELOPER_NAME" -embed "$PROVISIONING_PROFILE"
 
 RELEASE_DATE=`date '+%Y-%m-%d %H:%M:%S'`
-RELEASE_NOTES="Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE" # TODO: swap out for actual build number?
+RELEASE_NOTES="Travis Build: $TRAVIS_BUILD_NUMBER\nUploaded: $RELEASE_DATE" # TODO: swap out for actual build number?
+
+zip -r -9 "$OUTPUTDIR/$APPNAME.app.dSYM.zip" "$OUTPUTDIR/$APPNAME.app.dSYM"
 
 curl http://testflightapp.com/api/builds.json \
   -F file="@$OUTPUTDIR/$APP_NAME.ipa" \

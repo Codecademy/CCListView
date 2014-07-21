@@ -24,3 +24,14 @@ after_success:
 - "./Tools/TravisCI/sign.sh"
 after_script:
 - "./Tools/TravisCI/finished.sh"
+deploy:
+  provider: s3
+  access_key_id: AKIAI4QUTS455FZHLNUQ
+  secret_access_key:
+    secure: S7C2Ohn/vkye7qM26vb0s9naCaCzw6XGniiREZkFDeI01MFxAF0ut36JK6VJEZSNfYfvjuLBWgnIcbL0o7ECNvsOtcLAhql+99aw3Fe/WR+UyzOObQdXD4W1gtvmo9aYJkljPozW7QZsPAw8UVuzmlbH6D4xwVV0i0r87YmJ4jg=
+  bucket: codecademy-public-mobile-builds
+  upload-dir: "/"
+  acl: !ruby/string:HighLine::String |-
+    cHVibGljX3JlYWQ=
+  on:
+    repo: Codecademy/CCListView

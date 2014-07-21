@@ -6,6 +6,8 @@ env:
   - PROFILE_NAME="CCListViewExample_Enterprise"
   - secure: IUWvVMx2Hv53tI2vCx3aYXtBqUZ/xt1j9yLPK5zmYUd8AILTsBrfT8oB9jrU7aDGb2049Dth/sCwBvIIBcbnOC2HCG4580+YKYpjV9fJAOdJJ5X1pZopIpn4sR6YnNID8xDLvkYN7odKxB8KTsrm5hm0v4XBmOFsdQLveWjwGGI=
   - secure: Q50hMN9J/aaYYh0b4n8tKYd6u1qBGpgDEKsqdNZIMTBAjD7yADQvahAZlORPNekzOPS905a3hwb+b+rhCXvCzyn+VJgEAJbEw8e7av2Ei5xz/RjNpLa9liIPUfpIin56RSxSZoV9UF72J+iowG12O5j5BvqcFsE7gxPdT6kF6pY=
+  - secure: "aTlYVWyA20Nq7P/MHIyXq+6ovLYRkifWCVk0UIusPcXwnY0tWeCOD2rEqaIgfFIDL5KYMVYCqHEfHrrBtCvVWc91/DkTCz8ERcqYEMGpXUoMHy8eAxzZxMuO+xo9Trlwgm28Yp7hnOMWWxQS+HUM5ju0hHRqRcWeGuExkVIfmPQ="
+  - secure: "IbSnGqjT44ulLEsMA3jjjhKJ67l2TzY1mS4/vm2LeblLDU4W1ckf+7ctdoQtX94zpjEAFFpRxxvWNmH+9L0GiYb7lw0lEAqR1Pvq8p20Yi4cmHgVFo3A1K3a6LMM9p3qvcnEFQ6V85Ur9AqSdAs0nXsw6BwS6lM41SdftqviOgA="
 before_script:
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in Tools/Signing/AppleWWDRCA.cer.enc -d -a -out Tools/Signing/AppleWWDRCA.cer
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in Tools/Signing/CCListViewExample_Enterprise.mobileprovision.enc -d -a -out Tools/Signing/CCListViewExample_Enterprise.mobileprovision
@@ -21,17 +23,6 @@ script:
 - xctool -workspace CCListViewExample.xcworkspace -scheme "CCListViewExample" -sdk iphoneos -configuration Release build OBJROOT=$PWD/build SYMROOT=$PWD/build
 - pod spec lint CCListView.podspec
 after_success:
-- "./Tools/TravisCI/sign.sh"
+- "./Tools/TravisCI/deploy.sh"
 after_script:
 - "./Tools/TravisCI/finished.sh"
-deploy:
-  provider: s3
-  access_key_id: AKIAI4QUTS455FZHLNUQ
-  secret_access_key:
-    secure: S7C2Ohn/vkye7qM26vb0s9naCaCzw6XGniiREZkFDeI01MFxAF0ut36JK6VJEZSNfYfvjuLBWgnIcbL0o7ECNvsOtcLAhql+99aw3Fe/WR+UyzOObQdXD4W1gtvmo9aYJkljPozW7QZsPAw8UVuzmlbH6D4xwVV0i0r87YmJ4jg=
-  bucket: codecademy-public-mobile-builds
-  upload-dir: "/"
-  acl: !ruby/string:HighLine::String |-
-    cHVibGljX3JlYWQ=
-  on:
-    repo: Codecademy/CCListView

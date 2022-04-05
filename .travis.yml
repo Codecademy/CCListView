@@ -2,7 +2,7 @@ language: objective-c
 env:
   global:
   - APP_NAME="CCListViewExample"
-  - 'DEVELOPER_NAME="iPhone Distribution: Ryzac Inc."'
+  - 'DEVELOPER_NAME="iPhone Distribution: Codecademy LLC"'
   - PROFILE_NAME="CCListViewExample_Enterprise"
   - secure: IUWvVMx2Hv53tI2vCx3aYXtBqUZ/xt1j9yLPK5zmYUd8AILTsBrfT8oB9jrU7aDGb2049Dth/sCwBvIIBcbnOC2HCG4580+YKYpjV9fJAOdJJ5X1pZopIpn4sR6YnNID8xDLvkYN7odKxB8KTsrm5hm0v4XBmOFsdQLveWjwGGI=
   - secure: Q50hMN9J/aaYYh0b4n8tKYd6u1qBGpgDEKsqdNZIMTBAjD7yADQvahAZlORPNekzOPS905a3hwb+b+rhCXvCzyn+VJgEAJbEw8e7av2Ei5xz/RjNpLa9liIPUfpIin56RSxSZoV9UF72J+iowG12O5j5BvqcFsE7gxPdT6kF6pY=
